@@ -11,9 +11,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const UserGrowth = () => {
+const TaskProviderGrowth = () => {
   // Sample data for different years
- const yearlyData = {
+  const yearlyData = {
     2021: [
       { name: "jan", uv: 3500, pv: 2100, amt: 2200 },
       { name: "Feb", uv: 2800, pv: 1200, amt: 2000 },
@@ -96,13 +96,13 @@ const UserGrowth = () => {
   const getMetricLabel = (metric) => {
     switch (metric) {
       case "uv":
-        return "Unique Visitors";
+        return "Task Providers growth";
       case "pv":
         return "Page Views";
       case "amt":
         return "Amount";
       default:
-        return "Unique Visitors";
+        return "Task Providers growth";
     }
   };
 
@@ -117,6 +117,7 @@ const UserGrowth = () => {
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 {getMetricLabel(selectedMetric)} - {selectedYear}
               </h2>
+            
             </div>
             
             <div className="flex items-center gap-4">
@@ -181,4 +182,4 @@ const UserGrowth = () => {
   );
 };
 
-export default UserGrowth;
+export default TaskProviderGrowth;

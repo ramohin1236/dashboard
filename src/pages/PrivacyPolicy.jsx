@@ -1,8 +1,10 @@
-import React from 'react'
 
 const PrivacyPolicy = () => {
+  
   return (
-    <div>PrivacyPolicy</div>
+  <div className="flex flex-col items-center min-h-screen bg-gray-100 p-4">
+        <p>xzcsdsd</p>
+    </div>
   )
 }
 
