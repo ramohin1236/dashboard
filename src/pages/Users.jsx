@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Search, Download, Eye, MoreVertical, Unlock, Ban } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Search, Download } from 'lucide-react';
 import AllUsersTab from '../components/Tabs/AllUsersTab';
 import BlockedUsersTab from '../components/Tabs/BlockedUsersTab';
 

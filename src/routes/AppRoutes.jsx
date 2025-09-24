@@ -18,6 +18,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsCondition from "../pages/TermsCondition";
 import UserBlock from "../components/Tabs/UserBlock";
 import TaskProviderDetails from "../pages/TaskProviderDetails";
+import UpdateCate from "../pages/UpdateCate";
 
 const AppRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path="task-providers" element={<TaskProviders />} />
           <Route path="active-tasks" element={<ActiveTasks />} />
           <Route path="block-user" element={<UserBlock />} />
+          <Route path="update-cate" element={<UpdateCate />} />
           <Route path="taskproviders-details" element={<TaskProviderDetails />} />
           <Route path="service-category" element={<ServiceCategory />} />
           <Route path="manage-referrals" element={<ManageReferrals />} />
