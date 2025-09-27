@@ -1,15 +1,10 @@
-/* eslint-disable no-unused-vars */
-import { Eye, MoreVertical } from "lucide-react";
-import { useState } from "react";
 
-const AllRefund = ({
+const ReferralUses = ({
   processedRefunds,
   searchTerm,
   currentPage,
   setCurrentPage,
 }) => {
-  const [selectedRefund, setSelectedRefund] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredRefunds = processedRefunds.filter(
     (refund) =>
@@ -22,10 +17,6 @@ const AllRefund = ({
   const startIndex = (currentPage - 1) * 10;
   const paginatedRefunds = filteredRefunds.slice(startIndex, startIndex + 10);
 
-  const handleViewRefund = (refund) => {
-    setSelectedRefund(refund);
-    setIsModalOpen(true);
-  };
 
   return (
     <>
@@ -38,45 +29,34 @@ const AllRefund = ({
                 <tr>
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "150px" }}
+                  >
+                    Referrer Info
+                  </th>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "100px" }}
                   >
-                    Task ID
+                    Referrerd User
                   </th>
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "150px" }}
                   >
-                    Refund For
-                  </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "150px" }}
-                  >
-                    Refund To
-                  </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "200px" }}
-                  >
-                    Email
-                  </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "120px" }}
-                  >
-                    Amount
-                  </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "150px" }}
-                  >
-                    Account Number
+                    Referred Value
                   </th>
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "120px" }}
                   >
                     Status
+                  </th>
+
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "150px" }}
+                  >
+                    Applied Date
                   </th>
                 </tr>
               </thead>
@@ -86,11 +66,17 @@ const AllRefund = ({
                     key={refund.id}
                     className="hover:bg-gray-50 transition-colors"
                   >
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      #{refund.taskId}
-                    </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {refund.refundFor}
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                        <img
+                          src={refund.refundToAvatar}
+                          alt={refund.refundTo}
+                          className="w-8 h-8 rounded-full object-cover mr-3"
+                        />
+                        <span className="text-sm text-gray-900">
+                          {refund.refundTo}
+                        </span>
+                      </div>
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
@@ -105,18 +91,16 @@ const AllRefund = ({
                       </div>
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {refund.email}
-                    </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                      ${refund.amount}
-                    </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {refund.accountNumber}
+                      {refund.refferred_value}
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         {refund.status}
                       </span>
+                    </td>
+
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {refund.date}
                     </td>
                   </tr>
                 ))}
@@ -215,4 +199,4 @@ const AllRefund = ({
   );
 };
 
-export default AllRefund;
+export default ReferralUses;

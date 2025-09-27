@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
 
- 
+/* .my-custom-modal {
+  border: 2px solid blue;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+  */
 /* table head color change */
 .custom-table .ant-table-thead > tr > th {
   background-color: #E6F4F1; /* slate-800 */
