@@ -1,17 +1,13 @@
-import {
-  Eye,
-  Unlock,
-  Ban,
-} from "lucide-react";
+import { Eye, MoreVertical } from "lucide-react";
 import { Link } from "react-router";
 
-const BlockTaskProviders = ({
-  blockedUsers,
+const PendingPayments = ({
+  users,
   searchTerm,
   currentPage,
   setCurrentPage,
 }) => {
-  const filteredUsers = blockedUsers.filter(
+  const filteredUsers = users.filter(
     (user) =>
       user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       user.email.toLowerCase().includes(searchTerm.toLowerCase())
@@ -20,30 +16,6 @@ const BlockTaskProviders = ({
   const totalPages = Math.ceil(filteredUsers.length / 10);
   const startIndex = (currentPage - 1) * 10;
   const paginatedUsers = filteredUsers.slice(startIndex, startIndex + 10);
-
-  if (filteredUsers.length === 0) {
-    return (
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Ban className="w-8 h-8 text-gray-400" />
-          </div>
-          <h3 className="text-lg font-medium text-gray-900 mb-2">
-            No Blocked Users
-          </h3>
-          <p className="text-gray-500 mb-4">
-            There are currently no blocked users in the system.
-          </p>
-          <div className="inline-flex items-center px-4 py-2 bg-gray-50 rounded-lg">
-            <Ban className="w-4 h-4 text-gray-400 mr-2" />
-            <span className="text-sm text-gray-600">
-              All users are currently active
-            </span>
-          </div>
-        </div>
-      </div>
-    );
-  }
   return (
     <>
       {/* Table */}
@@ -57,13 +29,7 @@ const BlockTaskProviders = ({
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "200px" }}
                   >
-                    User Name
-                  </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "140px" }}
-                  >
-                    Mobile Number
+                    Service Provider
                   </th>
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -71,24 +37,38 @@ const BlockTaskProviders = ({
                   >
                     Email
                   </th>
+                   <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "100px" }}
+                  >
+                    Amount
+                  </th>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "140px" }}
+                  >
+                    A/C Number
+                  </th>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "140px" }}
+                  >
+                    Bank Name
+                  </th>
+                  
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "120px" }}
                   >
-                    Blocked Date
+                    Complete Date
                   </th>
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "150px" }}
+                    style={{ minWidth: "120px" }}
                   >
-                    Block Reason
+                    Status
                   </th>
-                  <th
-                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    style={{ minWidth: "100px" }}
-                  >
-                    Action
-                  </th>
+                 
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -103,66 +83,49 @@ const BlockTaskProviders = ({
                           <img
                             src={user.avatar}
                             alt={user.name}
-                            className="w-10 h-10 rounded-full object-cover opacity-75"
+                            className="w-10 h-10 rounded-full object-cover"
                           />
-                          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white flex items-center justify-center">
-                            <Ban className="w-2 h-2 text-white" />
-                          </div>
+                          {user.isOnline && (
+                            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                          )}
                         </div>
                         <div className="ml-3">
                           <div className="text-sm font-medium text-gray-900">
                             {user.name}
                           </div>
-                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
-                            Blocked
-                          </span>
                         </div>
                       </div>
                     </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {user.mobile}
-                    </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {user.email}
                     </td>
+                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {user.amount}
+                    </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {user.blockedDate}
+                      {user.acnumber}
+                    </td>
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {user.bank_name}
+                    </td>
+                   
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {user.complete_date}
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                        {user.blockReason}
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100">
+                        <select className="py-1 px-2 text-red-400">
+                             <option value="Pending">Pending</option>
+                             <option value="Paid">Paid</option>
+                        </select>
                       </span>
                     </td>
-                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <div className="flex items-center space-x-2">
-                        <button
-                          className="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-md flex items-center justify-center transition-colors"
-                          title="Unblock User"
-                        >
-                          <Unlock className="w-4 h-4" />
-                        </button>
-                        <button
-                          className="w-8 h-8 bg-[#115E59] hover:bg-teal-700 text-white rounded-md flex items-center justify-center transition-colors"
-                          title="View Details"
-                        >
-                          <Link to="/block-user" className="cursor-pointer">
-                            <Eye className="w-4 h-4" />
-                          </Link>
-                        </button>
-                      </div>
-                    </td>
+                    
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="block lg:hidden px-4 py-2 bg-gray-50 border-t border-gray-200">
-          <p className="text-xs text-gray-500 text-center">
-            ← Scroll table horizontally to view more data →
-          </p>
         </div>
       </div>
 
@@ -171,7 +134,7 @@ const BlockTaskProviders = ({
         <div className="text-sm text-gray-500">
           Showing {Math.min(startIndex + 1, filteredUsers.length)} to{" "}
           {Math.min(startIndex + 10, filteredUsers.length)} of{" "}
-          {filteredUsers.length} blocked users
+          {filteredUsers.length} results
         </div>
 
         <div className="flex items-center space-x-1">
@@ -248,4 +211,4 @@ const BlockTaskProviders = ({
   );
 };
 
-export default BlockTaskProviders;
+export default PendingPayments;

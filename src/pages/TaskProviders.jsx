@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Search, Download, Eye, MoreVertical, Unlock, Ban } from 'lucide-react';
-import AllUsersTab from '../components/Tabs/AllUsersTab';
-import BlockedUsersTab from '../components/Tabs/BlockedUsersTab';
+import { useState } from 'react';
+import { ArrowLeft, Search, Download } from 'lucide-react';
 import AllTaskProvider from '../components/Tabs/AllTaskProvider';
 import BlockTaskProviders from '../components/Tabs/BlockTaskProviders';
 

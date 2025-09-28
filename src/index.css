@@ -70,9 +70,7 @@
   display: none; /* Chrome, Safari, Opera */
 }
  
-select option {
-  background-color: #e0181c;
-}
+
  
 /* Remove all borders from the Ant Design Table */
 .ant-table {
