@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import {
-  ChevronLeft,
-  ChevronRight
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ActiveTasks = () => {
   const [activeTab, setActiveTab] = useState("daily");

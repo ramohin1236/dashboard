@@ -19,6 +19,7 @@ import TermsCondition from "../pages/TermsCondition";
 import UserBlock from "../components/Tabs/UserBlock";
 import TaskProviderDetails from "../pages/TaskProviderDetails";
 import UpdateCate from "../pages/UpdateCate";
+import ManageDisputeDetails from "../pages/ManageDisputeDetails";
 
 const AppRoutes = () => {
   return (
@@ -39,6 +40,7 @@ const AppRoutes = () => {
           <Route path="manage-payments" element={<ManagePayments />} />
           <Route path="manage-refund" element={<ManageRefund />} />
           <Route path="manage-dispute" element={<ManageDispute />} />
+          <Route path="manage-dispute/:id" element={<ManageDisputeDetails />} />
           <Route path="earnings" element={<Earnings />} />
           <Route path="profile-setting" element={<ProfileSetting />} />
           <Route path="faq" element={<FAQ />} />
