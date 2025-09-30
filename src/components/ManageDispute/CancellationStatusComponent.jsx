@@ -91,16 +91,28 @@ const CancellationStatusComponent = ({ cancellationStatus }) => {
               </p>
             </div>
 
-            {/* evedence */}
+            {/* /* evidence */} 
 
             <div className="border-b pb-6 border-b-gray-300">
-                 <p>request Evidence</p>
+                <p>request Evidence</p>
 
-                 <div className="flex flex-wrap">
-                     <img src="/evedence.png" alt=""  className="w-64"/>
-                     <img src="/evedencee.png" alt="" className="w-64"/>
-                     <img src="/evedencee.png" alt="" className="w-64"/>
-                 </div>
+                <div className="flex flex-wrap">
+                    <img
+                        src="/evedence.png"
+                        alt="Screenshot of a project management dashboard showing a list of overdue tasks highlighted in red with the text Project Deadline Missed. The environment is a digital workspace with a serious and urgent tone."
+                        className="w-64"
+                    />
+                    <img
+                        src="/evedencee.png"
+                        alt="Chat conversation between client and service provider discussing missed meetings and delays. The chat window displays timestamps and messages expressing concern and frustration. The setting is a messaging interface with a tense emotional tone."
+                        className="w-64"
+                    />
+                    <img
+                        src="/evedencee.png"
+                        alt="Document scan displaying a contract section titled Deliverables Not Met with highlighted clauses about project standards. The document is shown on a white background, conveying a formal and factual atmosphere."
+                        className="w-64"
+                    />
+                </div>
             </div>
 
             {/* Status Section */}
