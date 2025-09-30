@@ -1,4 +1,4 @@
-import { Check, GitPullRequest, User, X } from "lucide-react";
+import { ArrowLeftRight, Calendar, Check, GitPullRequest, User, X } from "lucide-react";
 import { FaCircleUser } from "react-icons/fa6";
 
 const CancellationStatusComponent = ({ cancellationStatus }) => {
@@ -49,6 +49,7 @@ const CancellationStatusComponent = ({ cancellationStatus }) => {
 
   return (
    <div className="bg-[#E6F4F1] rounded-lg p-4 lg:p-6 mb-6">
+    
        <div className="flex flex-col lg:flex-row">
       {/* Cancellation Status Section */}
       <div className="">
@@ -128,9 +129,11 @@ const CancellationStatusComponent = ({ cancellationStatus }) => {
           </div>
         </div>
       </div>
+      
+     
 
-      <div className="bg-[#E6F4F1] rounded-lg p-4 lg:p-6 mb-6">
-        <div className="flex items-start gap-3 mb-4">
+      <div className="bg-[#E6F4F1] rounded-lg p-4 lg:p-6 mb-6 ">
+        <div className="flex items-start gap-3 mb-4 pr-12">
           <div className="flex-1 pt-2">
             {/* Requested By Section */}
             <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between mb-6 border-b pb-6 border-b-gray-300">
@@ -144,7 +147,10 @@ const CancellationStatusComponent = ({ cancellationStatus }) => {
                 </div>
               </div>
               <p className="text-gray-500 text-sm">15 May 2020 8:00 am</p>
+
+              
             </div>
+             
             {/* Cancellation Reason */}
             <div className="mb-6 border-b pb-6 border-b-gray-300">
               <h4 className="font-medium text-gray-900 mb-2">

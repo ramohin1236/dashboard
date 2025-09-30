@@ -1,4 +1,11 @@
-import { Check, GitPullRequest, User, X } from "lucide-react";
+import {
+  ArrowLeftRight,
+  Calendar,
+  Check,
+  GitPullRequest,
+  User,
+  X,
+} from "lucide-react";
 import { FaCircleUser } from "react-icons/fa6";
 
 const DateExtensionRequestSection = ({ extensionStatus }) => {
@@ -49,6 +56,32 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
 
   return (
     <div className="bg-[#E6F4F1] rounded-lg p-4 lg:p-6 mb-6">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6  border border-gray-300 px-4 py-2 rounded-2xl">
+        {/* Current Date */}
+        <div>
+          <h4 className="font-medium text-gray-900 mb-2">
+            Current Completion Date
+          </h4>
+          <div className=" rounded-lg p-3 flex items-center gap-3">
+            <Calendar className="w-5 h-5 text-gray-400" />
+            <span className="text-gray-700 text-sm">15 May 2020 8:00 am</span>
+          </div>
+        </div>
+
+        {/* Arrow */}
+        <div className="flex items-center justify-center">
+          <ArrowLeftRight className="w-6 h-6 text-gray-400" />
+        </div>
+
+        {/* New Proposed Date */}
+        <div>
+          <h4 className="font-medium text-gray-900 mb-2">New Proposed Date</h4>
+          <div className=" rounded-lg p-3 flex items-center gap-3">
+            <Calendar className="w-5 h-5 text-gray-400" />
+            <span className="text-gray-700 text-sm">15 May 2020 8:00 am</span>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col lg:flex-row bg-[#E6F4F1] rounded-lg p-4 lg:p-6 mb-6 ">
         {/* Cancellation Status Section */}
         <div className="">
@@ -58,8 +91,9 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                You Requested To Cancel The Task Via Resolution Center
+                Request to Change of Task Completion Date
               </h3>
+
               {/* Requested By Section */}
               <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between mb-6 border-b pb-6 border-b-gray-300">
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
@@ -67,8 +101,8 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
                     <FaCircleUser className="text-3xl text-green-900" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Requested By</p>
-                    <p className="text-gray-600 text-sm">Me</p>
+                    <p className="font-medium text-gray-900">Requested To</p>
+                    <p className="text-gray-600 text-sm">Service Provider</p>
                   </div>
                 </div>
                 <p className="text-gray-500 text-sm">15 May 2020 8:00 am</p>
