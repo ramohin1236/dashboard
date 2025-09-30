@@ -97,9 +97,9 @@ const CancellationStatusComponent = ({ cancellationStatus }) => {
                  <p>request Evidence</p>
 
                  <div className="flex flex-wrap">
-                     <img src="/evedence.png" alt=""  className="lg:w-64"/>
-                     <img src="/evedencee.png" alt="" className="lg:w-64"/>
-                     <img src="/evedencee.png" alt="" className="lg:w-64"/>
+                     <img src="/evedence.png" alt=""  className="w-64"/>
+                     <img src="/evedencee.png" alt="" className="w-64"/>
+                     <img src="/evedencee.png" alt="" className="w-64"/>
                  </div>
             </div>
 

@@ -1,9 +1,9 @@
 
-import { Calendar, MapPin, MessageCircle, User } from "lucide-react";
+import { Calendar, MapPin, User } from "lucide-react";
 
 const TaskInfoSection = () => {
   return (
-    <div className="flex flex-col md:flex-row lg:gap-96">
+    <div className="flex flex-col md:flex-row md:gap-36 lg:gap-96">
       {/* left side */}
       <div>
         <div className="flex mt-8 items-center gap-3">

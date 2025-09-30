@@ -1,5 +1,3 @@
-
-
 // cancellationStatus should be
 
 import CancellationStatusComponent from "./CancellationStatusComponent";
@@ -16,7 +14,7 @@ import TaskInfoSection from "./TaskInfoSection";
 
 const Progress = ({
   cancellationStatus = "in-progress",
-  extensionStatus = "in-progress"
+  extensionStatus = "in-progress",
 }) => {
   const steps = [
     { id: 1, label: "Offered", date: "Feb 21, 2023", completed: true },
@@ -25,29 +23,40 @@ const Progress = ({
   ];
 
   return (
-    <div className="flex flex-col gap-12 ">
-      {/* Task Info Section */}
-      <TaskInfoSection />
+    <div>
+      <div className="flex flex-col gap-12 ">
+        {/* Task Info Section */}
+        <TaskInfoSection />
 
-      {/* Task Details Section */}
-      <TaskDetailsSection />
+        {/* Task Details Section */}
+        <TaskDetailsSection />
 
-      {/* Pricing Section */}
-      <PricingSection />
+        {/* Pricing Section */}
+        <PricingSection />
 
-      {/* Progress Bar */}
-      <ProgressBarComponent steps={steps} progressWidth="50%" />
+        {/* Progress Bar */}
+        <ProgressBarComponent steps={steps} progressWidth="50%" />
 
-      {/* Cancellation Status Section (conditional) */}
-      <div className="flex flex-col lg:flex-row gap-20">
-        <CancellationStatusComponent cancellationStatus={cancellationStatus} />
-        <DateExtensionRequestSection extensionStatus={extensionStatus} />
+        {/* Cancellation Status Section (conditional) */}
+        <div className="flex flex-col lg:flex-row gap-20">
+          <CancellationStatusComponent
+            cancellationStatus={cancellationStatus}
+          />
+          <DateExtensionRequestSection extensionStatus={extensionStatus} />
+        </div>
+     
       </div>
-       {/* <div className="flex justify-start">
-          <button className="px-6 py-2.5 bg-[#115E59] hover:bg-teal-700 text-white rounded-md transition-colors font-medium cursor-pointer">
-            Mark As Complete
+         <div className="flex flex-wrap gap-2 lg:gap-8 justify-start">
+          <button className="px-6 py-2.5 bg-[#E6F4F1] text-[#115E59] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
+            Approve Extension
           </button>
-        </div> */}
+          <button className="px-6 py-2.5 bg-[#E6F4F1] text-[#115E59] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
+            Reject Extension
+          </button>
+          <button className="px-6 py-2.5 bg-[#FEE2E2] text-[#EF4444] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
+            Cancel this Task & Refund
+          </button>
+        </div>
     </div>
   );
 };

@@ -1,9 +1,7 @@
-
 import { Check, GitPullRequest, User, X } from "lucide-react";
 import { FaCircleUser } from "react-icons/fa6";
 
 const DateExtensionRequestSection = ({ extensionStatus }) => {
-    
   const getCancellationContent = () => {
     if (!extensionStatus) return null;
 
@@ -66,7 +64,7 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
             <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between mb-6 border-b pb-6 border-b-gray-300">
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <div className="">
-                  <FaCircleUser className="text-3xl text-green-900"/>
+                  <FaCircleUser className="text-3xl text-green-900" />
                 </div>
                 <div>
                   <p className="font-medium text-gray-900">Requested By</p>
@@ -94,13 +92,13 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
             {/* evedence */}
 
             <div className="border-b pb-6 border-b-gray-300">
-                 <p>request Evidence</p>
+              <p>request Evidence</p>
 
-                 <div className="flex flex-wrap">
-                     <img src="/evedence.png" alt=""  className="w-64"/>
-                     <img src="/evedencee.png" alt="" className="w-64"/>
-                     <img src="/evedencee.png" alt="" className="w-64"/>
-                 </div>
+              <div className="flex flex-wrap">
+                <img src="/evedence.png" alt="" className="w-64" />
+                <img src="/evedencee.png" alt="" className="w-64" />
+                <img src="/evedencee.png" alt="" className="w-64" />
+              </div>
             </div>
 
             {/* Status Section */}
@@ -118,15 +116,10 @@ const DateExtensionRequestSection = ({ extensionStatus }) => {
                   </p>
                 </div>
               </div>
-              
             </div>
-
-            
           </div>
         </div>
       </div>
-
-  
     </>
   );
 };
