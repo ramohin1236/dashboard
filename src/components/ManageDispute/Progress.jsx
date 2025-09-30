@@ -38,25 +38,15 @@ const Progress = ({
         <ProgressBarComponent steps={steps} progressWidth="50%" />
 
         {/* Cancellation Status Section (conditional) */}
-        <div className="flex flex-col lg:flex-row gap-20">
+        <div >
           <CancellationStatusComponent
             cancellationStatus={cancellationStatus}
           />
           <DateExtensionRequestSection extensionStatus={extensionStatus} />
         </div>
-     
+      
       </div>
-         <div className="flex flex-wrap gap-2 lg:gap-8 justify-start">
-          <button className="px-6 py-2.5 bg-[#E6F4F1] text-[#115E59] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
-            Approve Extension
-          </button>
-          <button className="px-6 py-2.5 bg-[#E6F4F1] text-[#115E59] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
-            Reject Extension
-          </button>
-          <button className="px-6 py-2.5 bg-[#FEE2E2] text-[#EF4444] border-1 [#115E59] rounded-md transition-colors font-medium cursor-pointer">
-            Cancel this Task & Refund
-          </button>
-        </div>
+      
     </div>
   );
 };
