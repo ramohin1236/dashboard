@@ -1,12 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { FaExclamationCircle } from "react-icons/fa";
 import { Link } from "react-router";
 
-const ManageDispute = ({id}) => {
+const ManageDispute = ({ id }) => {
   const [activeTab, setActiveTab] = useState("All Dispute");
   const [currentPeriod, setCurrentPeriod] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  
 
   // Sample dispute data grouped by status
   const disputeData = {
@@ -142,12 +142,11 @@ const ManageDispute = ({id}) => {
                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Request Date
                 </th>
-               
 
                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Status
                 </th>
-                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Action
                 </th>
               </tr>
@@ -166,9 +165,11 @@ const ManageDispute = ({id}) => {
                   </td>
                   <td className="px-4 py-3">{task.request_date}</td>
                   <td className="px-4 py-3">{task.status}</td>
-                   <td className="px-4 py-3 text-[#115E59] text-2xl">
-                     <Link to={`/manage-dispute/${1}`}><FaExclamationCircle /></Link>
-                   </td>
+                  <td className="px-4 py-3 text-[#115E59] text-2xl">
+                    <Link to={`/manage-dispute/${1}`}>
+                      <FaExclamationCircle />
+                    </Link>
+                  </td>
                 </tr>
               ))}
               {paginatedTasks.length === 0 && (
