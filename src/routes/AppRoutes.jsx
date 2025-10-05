@@ -20,6 +20,10 @@ import UserBlock from "../components/Tabs/UserBlock";
 import TaskProviderDetails from "../pages/TaskProviderDetails";
 import UpdateCate from "../pages/UpdateCate";
 import ManageDisputeDetails from "../pages/ManageDisputeDetails";
+import Login from "../pages/Login";
+import AuthLayout from "../components/Layout/authLayout/AuthLayout";
+import ForgetPassword from "../pages/ForgetPassword";
+import Otp from "../pages/Otp";
 
 const AppRoutes = () => {
   return (
@@ -33,7 +37,10 @@ const AppRoutes = () => {
           <Route path="active-tasks" element={<ActiveTasks />} />
           <Route path="block-user" element={<UserBlock />} />
           <Route path="update-cate" element={<UpdateCate />} />
-          <Route path="taskproviders-details" element={<TaskProviderDetails />} />
+          <Route
+            path="taskproviders-details"
+            element={<TaskProviderDetails />}
+          />
           <Route path="service-category" element={<ServiceCategory />} />
           <Route path="manage-referrals" element={<ManageReferrals />} />
           <Route path="manage-promo" element={<ManagePromo />} />
@@ -46,6 +53,14 @@ const AppRoutes = () => {
           <Route path="faq" element={<FAQ />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-condition" element={<TermsCondition />} />
+        </Route>
+      </Routes>
+      <Routes>
+        {/* Layout with Sidebar + Topbar */}
+        <Route path="/" element={<AuthLayout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="forget-pass" element={<ForgetPassword />} />
+            <Route path="otp" element={<Otp />} />
         </Route>
       </Routes>
     </BrowserRouter>
