@@ -12,6 +12,8 @@ import {
   Form,
 } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
+import { Link } from "react-router";
+import { ArrowLeft } from "lucide-react";
 
 const { TabPane } = Tabs;
 
@@ -157,7 +159,14 @@ const ManagePromo = () => {
   return (
     <div className="bg-white p-3">
       <div className="flex justify-between mb-3">
-        <h1 className="font-bold text-lg">Promo Management</h1>
+       <div className="flex items-center space-x-3">
+            <Link to="/manage-referrals" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <ArrowLeft className="w-5 h-5 text-gray-600" />
+            </Link>
+            <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
+              Manage Promo
+            </h1>
+          </div>
         <Button
           type="primary"
           style={{ background: "#115E59" }}
@@ -180,7 +189,7 @@ const ManagePromo = () => {
             <Pagination
               current={currentPage}
               pageSize={pageSize}
-              total={promoCodes.length}
+              total={promoCodes?.length}
               onChange={handlePageChange}
               showSizeChanger={false}
             />
@@ -199,7 +208,7 @@ const ManagePromo = () => {
             <Pagination
               current={currentPage}
               pageSize={pageSize}
-              total={promoUses.length}
+              total={promoUses?.length}
               onChange={handlePageChange}
               showSizeChanger={false}
             />

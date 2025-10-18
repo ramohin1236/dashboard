@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ArrowLeft, Search, Download } from 'lucide-react';
 import PendingPayments from '../components/Table/PendingPayments';
 import AllPayment from '../components/Table/AllPayment';
+import { Link } from 'react-router';
 
 const ManagePayments = () => {
    const [activeTab, setActiveTab] = useState('all');
@@ -267,9 +268,9 @@ const ManagePayments = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <Link to="/manage-promo" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <ArrowLeft className="w-5 h-5 text-gray-600" />
-            </button>
+            </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Payments Management</h1>
           </div>
           

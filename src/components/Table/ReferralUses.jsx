@@ -1,11 +1,9 @@
-
 const ReferralUses = ({
   processedRefunds,
   searchTerm,
   currentPage,
   setCurrentPage,
 }) => {
-
   const filteredRefunds = processedRefunds.filter(
     (refund) =>
       refund.taskId.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -16,7 +14,6 @@ const ReferralUses = ({
   const totalPages = Math.ceil(filteredRefunds.length / 10);
   const startIndex = (currentPage - 1) * 10;
   const paginatedRefunds = filteredRefunds.slice(startIndex, startIndex + 10);
-
 
   return (
     <>

@@ -59,8 +59,8 @@ const Sidebar = () => {
         lg:translate-x-0 transition-transform duration-300 flex flex-col`}
       >
         {/* Logo */}
-        <div className="pl-8 border-b border-gray-300 py-6 flex items-center ">
-          <img src="/taskalley_logo.svg" alt="TaskAlley" className="w-36" />
+        <div className="border-b border-gray-300 py-6 flex items-center justify-center ">
+          <img src="/task_alley_logo.svg" alt="TaskAlley" className="w-28" />
         </div>
 
         {/* Navigation */}

@@ -4,7 +4,7 @@ import { Bell } from "lucide-react";
 
 const Topbar = () => {
   return (
-    <header className="w-full bg-white shadow-sm flex items-center justify-between px-4 py-5 sticky top-0 z-30">
+    <header className="w-full bg-white shadow-sm flex items-center justify-between px-4 py-7.5 sticky top-0 z-30">
       {/* Page Title */}
       <h2 className="text-lg font-semibold text-gray-700">Dashboard</h2>
 
