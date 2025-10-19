@@ -10,10 +10,13 @@ import {
   message,
   Button,
   Form,
+  DatePicker,
+  Select,
 } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router";
 import { ArrowLeft } from "lucide-react";
+import { CalendarOutlined } from "@ant-design/icons";
 
 const { TabPane } = Tabs;
 
@@ -65,7 +68,9 @@ const ManagePromo = () => {
   };
 
   const handleUpdateSubmit = (values) => {
-    message.success(`Promo Code ${selectedPromo.promoCode} updated successfully!`);
+    message.success(
+      `Promo Code ${selectedPromo.promoCode} updated successfully!`
+    );
     setIsUpdateModalOpen(false);
   };
 
@@ -159,14 +164,17 @@ const ManagePromo = () => {
   return (
     <div className="bg-white p-3">
       <div className="flex justify-between mb-3">
-       <div className="flex items-center space-x-3">
-            <Link to="/manage-referrals" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
-            </Link>
-            <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
-              Manage Promo
-            </h1>
-          </div>
+        <div className="flex items-center space-x-3">
+          <Link
+            to="/manage-referrals"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 text-gray-600" />
+          </Link>
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
+            Manage Promo
+          </h1>
+        </div>
         <Button
           type="primary"
           style={{ background: "#115E59" }}
@@ -224,52 +232,129 @@ const ManagePromo = () => {
         footer={null}
         title="Update Promo Code"
       >
-        {selectedPromo && (
-          <Form
-            layout="vertical"
-            onFinish={handleUpdateSubmit}
-            initialValues={selectedPromo}
+        <div className="mb-6">
+          <p className="text-sm text-gray-600 mt-1">
+            update promotional coupon to offer discounts and boost engagement.
+          </p>
+        </div>
+
+        <Form
+          layout="vertical"
+          onFinish={() => message.success("Promo Added!")}
+          className="space-y-4"
+        >
+          <Form.Item
+            label="Promo Code"
+            name="promoCode"
+            rules={[{ required: true, message: "Please enter promo code" }]}
           >
-            <Form.Item label="Promo Code" name="promoCode">
-              <Input disabled />
-            </Form.Item>
+            <Input
+              placeholder="e.g. WELCOME10"
+              size="large"
+              className="rounded-lg"
+            />
+          </Form.Item>
 
-            <Form.Item label="Promo Type" name="promoType">
-              <Input />
-            </Form.Item>
+          <Form.Item
+            label="Promo Type"
+            name="promoType"
+            rules={[{ required: true, message: "Please enter promo type" }]}
+          >
+            <Input
+              placeholder="e.g. New user first order"
+              size="large"
+              className="rounded-lg"
+            />
+          </Form.Item>
 
-            <Form.Item label="Value" name="value">
-              <Input />
-            </Form.Item>
+          <Form.Item label="Uses Limit" name="limit">
+            <Input
+              placeholder="12"
+              type="number"
+              size="large"
+              className="rounded-lg"
+            />
+          </Form.Item>
 
-            <Form.Item label="Limit" name="limit">
-              <Input />
-            </Form.Item>
-
-            <Form.Item label="Start Date" name="startDate">
-              <Input />
-            </Form.Item>
-
-            <Form.Item label="End Date" name="endDate">
-              <Input />
-            </Form.Item>
-
-            <Form.Item label="Status" name="status">
-              <Input />
-            </Form.Item>
-
-            <div className="flex justify-end gap-2">
-              <Button onClick={handleCancelUpdate}>Cancel</Button>
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{ background: "#115E59" }}
+          <div className="grid grid-cols-2 gap-4">
+            <Form.Item
+              label="Discount Type"
+              name="discountType"
+              rules={[{ required: true, message: "Select discount type" }]}
+            >
+              <Select
+                placeholder="Select type"
+                size="large"
+                className="rounded-lg"
               >
-                Save
-              </Button>
-            </div>
-          </Form>
-        )}
+                <Select.Option value="percentage">Percentage</Select.Option>
+                <Select.Option value="flat">Fixed Amount</Select.Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              label="Discount Value"
+              name="discountValue"
+              rules={[{ required: true, message: "Enter value" }]}
+            >
+              <Input
+                placeholder="e.g. 10"
+                type="number"
+                size="large"
+                className="rounded-lg"
+              />
+            </Form.Item>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <Form.Item
+              label="Valid From"
+              name="startDate"
+              rules={[{ required: true, message: "Select start date" }]}
+            >
+              <DatePicker
+                placeholder="Select opening time"
+                size="large"
+                className="w-full rounded-lg"
+                format="YYYY-MM-DD"
+                suffixIcon={<CalendarOutlined className="text-gray-400" />}
+              />
+            </Form.Item>
+
+            <Form.Item
+              label="Valid To"
+              name="endDate"
+              rules={[{ required: true, message: "Select end date" }]}
+            >
+              <DatePicker
+                placeholder="Select closing time"
+                size="large"
+                className="w-full rounded-lg"
+                format="YYYY-MM-DD"
+                suffixIcon={<CalendarOutlined className="text-gray-400" />}
+              />
+            </Form.Item>
+          </div>
+
+          <div className="flex gap-3 pt-4 mt-6">
+            <Button
+              onClick={() => setIsAddModalOpen(false)}
+              size="large"
+              className="flex-1 rounded-lg"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="primary"
+              htmlType="submit"
+              size="large"
+              className="flex-1 rounded-lg"
+              style={{ background: "#115E59" }}
+            >
+              Save
+            </Button>
+          </div>
+        </Form>
       </Modal>
 
       {/* Add New Promo Modal */}
@@ -278,45 +363,177 @@ const ManagePromo = () => {
         centered
         onCancel={() => setIsAddModalOpen(false)}
         footer={null}
-        title="Add New Promo Code"
+        width={500}
+        className="promo-modal"
       >
-        <Form layout="vertical" onFinish={() => message.success("Promo Added!")}>
-          <Form.Item label="Promo Code" name="promoCode">
-            <Input placeholder="e.g. WELCOME10" />
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900">
+            Add New Promo Code
+          </h2>
+          <p className="text-sm text-gray-600 mt-1">
+            Create a new promotional coupon to offer discounts and boost
+            engagement.
+          </p>
+        </div>
+
+        <Form
+          layout="vertical"
+          onFinish={() => message.success("Promo Added!")}
+          className="space-y-4"
+        >
+          <Form.Item
+            label="Promo Code"
+            name="promoCode"
+            rules={[{ required: true, message: "Please enter promo code" }]}
+          >
+            <Input
+              placeholder="e.g. WELCOME10"
+              size="large"
+              className="rounded-lg"
+            />
           </Form.Item>
 
-          <Form.Item label="Promo Type" name="promoType">
-            <Input placeholder="e.g. New user first order" />
+          <Form.Item
+            label="Promo Type"
+            name="promoType"
+            rules={[{ required: true, message: "Please enter promo type" }]}
+          >
+            <Input
+              placeholder="e.g. New user first order"
+              size="large"
+              className="rounded-lg"
+            />
           </Form.Item>
 
           <Form.Item label="Uses Limit" name="limit">
-            <Input placeholder="e.g. 12" />
+            <Input
+              placeholder="12"
+              type="number"
+              size="large"
+              className="rounded-lg"
+            />
           </Form.Item>
 
-          <Form.Item label="Discount Type" name="discountType">
-            <Input placeholder="Percentage / Flat" />
-          </Form.Item>
+          <div className="grid grid-cols-2 gap-4">
+            <Form.Item
+              label="Discount Type"
+              name="discountType"
+              rules={[{ required: true, message: "Select discount type" }]}
+            >
+              <Select
+                placeholder="Select type"
+                size="large"
+                className="rounded-lg"
+              >
+                <Select.Option value="percentage">Percentage</Select.Option>
+                <Select.Option value="flat">Fixed Amount</Select.Option>
+              </Select>
+            </Form.Item>
 
-          <Form.Item label="Discount Value" name="discountValue">
-            <Input placeholder="e.g. 10" />
-          </Form.Item>
+            <Form.Item
+              label="Discount Value"
+              name="discountValue"
+              rules={[{ required: true, message: "Enter value" }]}
+            >
+              <Input
+                placeholder="e.g. 10"
+                type="number"
+                size="large"
+                className="rounded-lg"
+              />
+            </Form.Item>
+          </div>
 
-          <Form.Item label="Valid From" name="startDate">
-            <Input placeholder="Select start date" />
-          </Form.Item>
+          <div className="grid grid-cols-2 gap-4">
+            <Form.Item
+              label="Valid From"
+              name="startDate"
+              rules={[{ required: true, message: "Select start date" }]}
+            >
+              <DatePicker
+                placeholder="Select opening time"
+                size="large"
+                className="w-full rounded-lg"
+                format="YYYY-MM-DD"
+                suffixIcon={<CalendarOutlined className="text-gray-400" />}
+              />
+            </Form.Item>
 
-          <Form.Item label="Valid To" name="endDate">
-            <Input placeholder="Select end date" />
-          </Form.Item>
+            <Form.Item
+              label="Valid To"
+              name="endDate"
+              rules={[{ required: true, message: "Select end date" }]}
+            >
+              <DatePicker
+                placeholder="Select closing time"
+                size="large"
+                className="w-full rounded-lg"
+                format="YYYY-MM-DD"
+                suffixIcon={<CalendarOutlined className="text-gray-400" />}
+              />
+            </Form.Item>
+          </div>
 
-          <div className="flex justify-end gap-2">
-            <Button onClick={() => setIsAddModalOpen(false)}>Cancel</Button>
-            <Button type="primary" htmlType="submit" style={{ background: "#115E59" }}>
+          <div className="flex gap-3 pt-4 mt-6">
+            <Button
+              onClick={() => setIsAddModalOpen(false)}
+              size="large"
+              className="flex-1 rounded-lg"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="primary"
+              htmlType="submit"
+              size="large"
+              className="flex-1 rounded-lg"
+              style={{ background: "#115E59" }}
+            >
               Save
             </Button>
           </div>
         </Form>
       </Modal>
+
+      {/* Add custom styles */}
+      <style jsx global>{`
+        .promo-modal .ant-modal-content {
+          border-radius: 16px;
+          overflow: hidden;
+        }
+
+        .promo-modal .ant-modal-header {
+          border-bottom: none;
+          padding: 24px 24px 0;
+        }
+
+        .promo-modal .ant-modal-body {
+          padding: 24px;
+        }
+
+        .promo-modal .ant-form-item-label > label {
+          font-weight: 500;
+          color: #374151;
+        }
+
+        .promo-modal .ant-input,
+        .promo-modal .ant-select-selector,
+        .promo-modal .ant-picker {
+          border-radius: 8px !important;
+          border-color: #d1d5db;
+        }
+
+        .promo-modal .ant-input:focus,
+        .promo-modal .ant-select-focused .ant-select-selector,
+        .promo-modal .ant-picker-focused {
+          border-color: #115e59 !important;
+          box-shadow: 0 0 0 2px rgba(17, 94, 89, 0.1) !important;
+        }
+
+        .promo-modal .ant-btn {
+          font-weight: 500;
+        }
+      `}</style>
     </div>
   );
 };

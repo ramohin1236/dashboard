@@ -1,25 +1,26 @@
 /* eslint-disable no-unused-vars */
-import { Handshake } from "lucide-react";
-import  { useState } from "react";
+import { ArrowLeft, Handshake } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router";
 import Progress from "../components/ManageDispute/Progress";
 import { SiGoogletasks } from "react-icons/si";
 
 const ManageDisputeDetails = () => {
-  const status = ["Bids", "Progress", "Completed", "Cancelled"];
+  const status = ["Bids", "Dispute", "Completed", "Cancelled"];
 
-  const [currentStatus, setCurrentStatus] = useState("Progress");
+  const [currentStatus, setCurrentStatus] = useState("Dispute");
   return (
     <div className="project_container mx-auto px-3 py-6 md:p-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
         <div className="flex items-center gap-4">
-          <SiGoogletasks className="text-green-900 text-xl"/>
+          <Link to="/manage-dispute">
+            <ArrowLeft className="text-green-900 text-xl" />
+          </Link>
           <p className="font-semibold text-md md:text-xl text-color mb-1">
             My Tasks
           </p>
         </div>
-
       </div>
 
       <div className="bg-white rounded-2xl shadow p-4">
@@ -29,8 +30,8 @@ const ManageDisputeDetails = () => {
 
         {/* Status + Image */}
         <div className="flex gap-3 mt-4 flex-col items-start">
-          <p className="py-2 px-4 border text-sm bg-[#FFEDD5] text-[#F97316] rounded-lg">
-            Open for {currentStatus}
+          <p className="py-2 px-4 border text-sm bg-[#FFEDD5] text-[#F97316] rounded-lg my-6">
+            {currentStatus}
           </p>
           <img
             src="/work.png"
@@ -41,9 +42,7 @@ const ManageDisputeDetails = () => {
 
         {/* Conditional Sections */}
         <div className="mt-4">
-          
-          {currentStatus === "Progress" && <Progress />}
-          
+          {currentStatus === "Dispute" && <Progress />}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import LastEarnHistory from "../components/Charts/LastEarnHistory";
 import EarningHistory from "../components/Charts/EarningHistory";
 import { Link } from "react-router";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, DollarSign, Download } from "lucide-react";
 import TaskProviderGrowth from "../components/Charts/TaskProviderGrowth";
 
 const Earnings = () => {
@@ -13,7 +13,7 @@ const Earnings = () => {
             to="/manage-dispute"
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <DollarSign className="w-5 h-5 text-gray-600" />
           </Link>
           <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
             Earning
