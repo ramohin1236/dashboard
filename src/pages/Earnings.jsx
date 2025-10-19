@@ -1,24 +1,33 @@
 import LastEarnHistory from "../components/Charts/LastEarnHistory";
 import EarningHistory from "../components/Charts/EarningHistory";
 import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
+import TaskProviderGrowth from "../components/Charts/TaskProviderGrowth";
 
 const Earnings = () => {
   return (
     <div>
-      <div className="flex items-center space-x-3 mb-10">
-        <Link
-          to="/manage-dispute"
-          className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5 text-gray-600" />
-        </Link>
-        <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
-          Earning
-        </h1>
+      <div className="flex items-center space-x-3 mb-20 justify-between">
+        <div className="flex items-center">
+          <Link
+            to="/manage-dispute"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 text-gray-600" />
+          </Link>
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
+            Earning
+          </h1>
+        </div>
+        <div>
+          <button className="bg-[#115E59] cursor-pointer hover:bg-teal-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors">
+            <Download className="w-4 h-4" />
+            <span className="hidden sm:inline">Export CSV</span>
+          </button>
+        </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-12 lg:h-96">
-        <div className="lg:w-[550px] md:h-64 lg:h-96 relative flex flex-col pt-10 pl-12 shadow-md rounded-2xl overflow-clip bg-gradient-to-bl from-[#E6F4F1] to-white">
+      <div className="flex flex-col lg:flex-row gap-12 lg:h-96 items-center justify-center">
+        <div className="lg:w-[550px] md:h-64 lg:h-[480px] relative flex flex-col pt-10 pl-12 shadow-md rounded-2xl overflow-clip bg-gradient-to-bl from-[#E6F4F1] to-white">
           <div className="absolute bottom-0 right-0">
             <img src="/bg_image.png" className="w-72" alt="" />
           </div>
@@ -29,7 +38,7 @@ const Earnings = () => {
           </div>
         </div>
         <div className="flex-1">
-          <EarningHistory />
+          <TaskProviderGrowth />
         </div>
       </div>
 

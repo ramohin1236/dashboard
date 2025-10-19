@@ -24,6 +24,7 @@ import Login from "../pages/Login";
 import AuthLayout from "../components/Layout/authLayout/AuthLayout";
 import ForgetPassword from "../pages/ForgetPassword";
 import Otp from "../pages/Otp";
+import EarningTable from "../components/Table/EarningTable";
 
 const AppRoutes = () => {
   return (
@@ -49,6 +50,7 @@ const AppRoutes = () => {
           <Route path="manage-dispute" element={<ManageDispute />} />
           <Route path="manage-dispute/:id" element={<ManageDisputeDetails />} />
           <Route path="earnings" element={<Earnings />} />
+          <Route path="earning_table" element={<EarningTable />} />
           <Route path="profile-setting" element={<ProfileSetting />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />

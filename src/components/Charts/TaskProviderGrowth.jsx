@@ -15,13 +15,13 @@ const TaskProviderGrowth = () => {
   // Sample data for different years
   const yearlyData = {
     2021: [
-      { name: "jan", uv: 3500, pv: 2100, amt: 2200 },
+      { name: "Jan", uv: 3500, pv: 2100, amt: 2200 },
       { name: "Feb", uv: 2800, pv: 1200, amt: 2000 },
       { name: "Mar", uv: 1800, pv: 8900, amt: 2100 },
       { name: "Apr", uv: 2500, pv: 3500, amt: 1900 },
       { name: "May", uv: 1700, pv: 4200, amt: 2000 },
       { name: "June", uv: 2200, pv: 3400, amt: 2300 },
-      { name: "jul", uv: 3200, pv: 4000, amt: 1950 },
+      { name: "Jul", uv: 3200, pv: 4000, amt: 1950 },
       { name: "Aug", uv: 3200, pv: 4000, amt: 1950 },
       { name: "Sep", uv: 3200, pv: 4000, amt: 1950 },
       { name: "Oct", uv: 3200, pv: 4000, amt: 1950 },
@@ -29,13 +29,13 @@ const TaskProviderGrowth = () => {
       { name: "Dec", uv: 3200, pv: 4000, amt: 1950 },
     ],
     2022: [
-      { name: "jan", uv: 4000, pv: 2400, amt: 2400 },
+      { name: "Jan", uv: 4000, pv: 2400, amt: 2400 },
       { name: "Feb", uv: 3000, pv: 1398, amt: 2210 },
       { name: "Mar", uv: 2000, pv: 9800, amt: 2290 },
       { name: "Apr", uv: 2780, pv: 3908, amt: 2000 },
       { name: "May", uv: 1890, pv: 4800, amt: 2181 },
       { name: "June", uv: 2390, pv: 3800, amt: 2500 },
-      { name: "jul", uv: 3490, pv: 4300, amt: 2100 },
+      { name: "Jul", uv: 3490, pv: 4300, amt: 2100 },
       { name: "Aug", uv: 3490, pv: 4300, amt: 2100 },
       { name: "Sep", uv: 3490, pv: 4300, amt: 2100 },
       { name: "Oct", uv: 3490, pv: 4300, amt: 2100 },
@@ -43,13 +43,13 @@ const TaskProviderGrowth = () => {
       { name: "Dec", uv: 3490, pv: 4300, amt: 2100 },
     ],
     2023: [
-      { name: "jan", uv: 4500, pv: 2800, amt: 2600 },
+      { name: "Jan", uv: 4500, pv: 2800, amt: 2600 },
       { name: "Feb", uv: 3300, pv: 1600, amt: 2400 },
       { name: "Mar", uv: 2300, pv: 10500, amt: 2500 },
       { name: "Apr", uv: 3100, pv: 4200, amt: 2200 },
       { name: "May", uv: 2100, pv: 5200, amt: 2350 },
       { name: "June", uv: 2700, pv: 4100, amt: 2700 },
-      { name: "jul", uv: 3800, pv: 4700, amt: 2300 },
+      { name: "Jul", uv: 3800, pv: 4700, amt: 2300 },
       { name: "Aug", uv: 3800, pv: 4700, amt: 2300 },
       { name: "Sep", uv: 3800, pv: 4700, amt: 2300 },
       { name: "Oct", uv: 3800, pv: 4700, amt: 2300 },
@@ -57,13 +57,13 @@ const TaskProviderGrowth = () => {
       { name: "Dec", uv: 3800, pv: 4700, amt: 2300 },
     ],
     2024: [
-      { name: "jan", uv: 5000, pv: 3200, amt: 2800 },
+      { name: "Jan", uv: 5000, pv: 3200, amt: 2800 },
       { name: "Feb", uv: 3600, pv: 1800, amt: 2600 },
       { name: "Mar", uv: 2600, pv: 11200, amt: 2700 },
       { name: "Apr", uv: 3400, pv: 4500, amt: 2400 },
       { name: "May", uv: 2300, pv: 5600, amt: 2500 },
       { name: "June", uv: 3000, pv: 4400, amt: 2900 },
-      { name: "jul", uv: 4100, pv: 5100, amt: 2500 },
+      { name: "Jul", uv: 4100, pv: 5100, amt: 2500 },
       { name: "Aug", uv: 4100, pv: 5100, amt: 2500 },
       { name: "Sep", uv: 4100, pv: 5100, amt: 2500 },
       { name: "Oct", uv: 4100, pv: 5100, amt: 2500 },
@@ -96,13 +96,13 @@ const TaskProviderGrowth = () => {
   const getMetricLabel = (metric) => {
     switch (metric) {
       case "uv":
-        return "Task Providers growth";
+        return "Task Providers Growth";
       case "pv":
         return "Page Views";
       case "amt":
         return "Amount";
       default:
-        return "Task Providers growth";
+        return "Task Providers Growth";
     }
   };
 

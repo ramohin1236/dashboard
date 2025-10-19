@@ -111,7 +111,7 @@ const EarningHistory = () => {
             
     
             {/* Chart */}
-            <div className="bg-white shadow-lg rounded-2xl p-6 border border-gray-200">
+            <div className="bg-white shadow-lg rounded-2xl px-6 pt-2 pb-4 border border-gray-200">
               <div className="flex justify-between items-center">
                 <div className="mb-2">
                   <h2 className="text-2xl font-bold text-gray-800 mb-2">
@@ -135,11 +135,11 @@ const EarningHistory = () => {
                   </select>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-72">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={currentData}
-                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                    margin={{ top: 10, right: 30, left: 20, bottom: 0 }}
                   >
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
                     <XAxis

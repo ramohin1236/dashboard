@@ -1,3 +1,4 @@
+import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router";
 
@@ -96,9 +97,12 @@ const LastEarnHistory = () => {
 
   return (
     <div>
-      <div className="flex justify-between h-20 items-center shadow-md px-12 rounded-md my-4 overflow-clip">
-        <p className="text-xl font-semibold">Last Earn History</p>
-        <Link className="text-[#115E59]">Show All</Link>
+      <div className="flex justify-between h-20 items-center shadow-md px-12 rounded-md my-4 overflow-clip mt-20">
+        <div> 
+          
+          <p className="text-xl font-semibold">Last Earn History</p>
+        </div>
+        <Link to='/earning_table' className="text-[#115E59] font-semibold">Show All</Link>
       </div>
 
       <div className="w-full overflow-x-auto rounded-md">
