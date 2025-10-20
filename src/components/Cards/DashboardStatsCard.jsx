@@ -3,7 +3,7 @@ import { Users, Briefcase, CheckSquare } from 'lucide-react';
 
 const DashboardStatsCard = () => {
   return (
-    <div className=" rounded-2xl p-6">
+    <div className=" rounded-2xl py-6">
       <div className="">
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x divide-gray-200">

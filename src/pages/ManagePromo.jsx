@@ -22,7 +22,7 @@ const { TabPane } = Tabs;
 
 const ManagePromo = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5;
+  const pageSize = 10;
 
   // Dummy Promo Codes
   const [promoCodes, setPromoCodes] = useState(
@@ -184,45 +184,105 @@ const ManagePromo = () => {
         </Button>
       </div>
 
-      <Tabs defaultActiveKey="1">
-        <TabPane tab="Promo Code" key="1">
-          <Table
-            dataSource={paginatedPromoCodes}
-            columns={promoCodeColumns}
-            pagination={false}
-            scroll={{ x: 900 }}
-          />
+     <Tabs 
+  defaultActiveKey="1"
+  className="custom-promo-tabs"
+>
+  <TabPane tab="Promo Code" key="1">
+    <Table
+      dataSource={paginatedPromoCodes}
+      columns={promoCodeColumns}
+      pagination={false}
+      scroll={{ x: 900 }}
+    />
 
-          <div className="mt-4 flex justify-center">
-            <Pagination
-              current={currentPage}
-              pageSize={pageSize}
-              total={promoCodes?.length}
-              onChange={handlePageChange}
-              showSizeChanger={false}
-            />
-          </div>
-        </TabPane>
+    <div className="mt-4 flex justify-center">
+      <Pagination
+        current={currentPage}
+        pageSize={pageSize}
+        total={promoCodes?.length}
+        onChange={handlePageChange}
+        showSizeChanger={false}
+      />
+    </div>
+  </TabPane>
 
-        <TabPane tab="Promo Use" key="2">
-          <Table
-            dataSource={paginatedUses}
-            columns={promoUseColumns}
-            pagination={false}
-            scroll={{ x: 800 }}
-          />
+  <TabPane tab="Promo Use" key="2">
+    <Table
+      dataSource={paginatedUses}
+      columns={promoUseColumns}
+      pagination={false}
+      scroll={{ x: 800 }}
+    />
 
-          <div className="mt-4 flex justify-center">
-            <Pagination
-              current={currentPage}
-              pageSize={pageSize}
-              total={promoUses?.length}
-              onChange={handlePageChange}
-              showSizeChanger={false}
-            />
-          </div>
-        </TabPane>
-      </Tabs>
+    <div className="mt-4 flex justify-center">
+      <Pagination
+        current={currentPage}
+        pageSize={pageSize}
+        total={promoUses?.length}
+        onChange={handlePageChange}
+        showSizeChanger={false}
+      />
+    </div>
+  </TabPane>
+</Tabs>
+
+{/* Add custom styles */}
+<style jsx global>{`
+  /* Active tab styling */
+  .custom-promo-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #115E59 !important;
+    font-weight: 600;
+  }
+  
+  /* Active tab indicator (bottom border) */
+  .custom-promo-tabs .ant-tabs-ink-bar {
+    background: #115E59 !important;
+    height: 3px !important;
+  }
+  
+  /* Hover state */
+  .custom-promo-tabs .ant-tabs-tab:hover .ant-tabs-tab-btn {
+    color: #115E59 !important;
+  }
+  
+  /* Tab bar styling */
+  .custom-promo-tabs .ant-tabs-nav {
+    margin-bottom: 24px;
+  }
+  
+  /* Inactive tabs */
+  .custom-promo-tabs .ant-tabs-tab {
+    color: #6B7280;
+    font-weight: 500;
+  }
+  
+  /* Pagination active color */
+  .custom-promo-tabs .ant-pagination-item-active {
+    border-color: #115E59 !important;
+    background-color: #115E59 !important;
+  }
+  
+  .custom-promo-tabs .ant-pagination-item-active a {
+    color: white !important;
+  }
+  
+  /* Pagination hover */
+  .custom-promo-tabs .ant-pagination-item:hover {
+    border-color: #115E59 !important;
+  }
+  
+  .custom-promo-tabs .ant-pagination-item:hover a {
+    color: #115E59 !important;
+  }
+  
+  /* Next/Prev buttons hover */
+  .custom-promo-tabs .ant-pagination-prev:hover .ant-pagination-item-link,
+  .custom-promo-tabs .ant-pagination-next:hover .ant-pagination-item-link {
+    color: #115E59 !important;
+    border-color: #115E59 !important;
+  }
+`}</style>
 
       {/* Update Modal */}
       <Modal

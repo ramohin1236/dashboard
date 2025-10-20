@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import { Link } from "react-router";
 
 const ActiveTasks = () => {
@@ -364,11 +364,20 @@ const ActiveTasks = () => {
 
   return (
     <div className="p-4">
-      <div className="flex items-center space-x-3 mb-10">
-            <Link to="/task-providers" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+      <div className="flex items-center justify-between space-x-3 mb-10">
+            <div className="flex text-center">
+               <Link to="/task-providers" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <ArrowLeft className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Active Tasks</h1>
+            </div>
+
+            <div>
+                <button className="bg-[#115E59] cursor-pointer hover:bg-teal-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors">
+            <Download className="w-4 h-4" />
+            <span className="hidden sm:inline">Export CSV</span>
+          </button>
+            </div>
           </div>
       {/* Tabs */}
       <div className="flex flex-wrap space-x-1 bg-gray-100 p-1 rounded-lg w-fit mb-6">
