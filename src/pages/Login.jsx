@@ -93,23 +93,25 @@ const Login = () => {
                     Remember me
                   </label>
                 </div>
-                <div className="text-sm">
+                {/* <div className="text-sm">
                   <a
                     href="jajvascript:void(0);"
                     className="text-blue-600 hover:underline font-semibold"
                   >
                     Forgot password?
                   </a>
-                </div>
+                </div> */}
               </div>
 
-              <div className="!mt-12">
-                <button
+              <div className="!mt-12 flex justify-center text-center">
+                <Link
+
+                to="/"
                   type="button"
                   className="w-full py-2 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-[#115E59] hover:bg-[#09534e] focus:outline-none cursor-pointer"
                 >
                   Sign in
-                </button>
+                </Link>
               </div>
             </form>
           </div>

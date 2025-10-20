@@ -17,7 +17,7 @@ import {
   FileText,
   LogOut,
 } from "lucide-react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { TbCategoryPlus } from "react-icons/tb";
 
 const navItems = [
@@ -89,10 +89,10 @@ const Sidebar = () => {
 
         {/* Logout */}
         <div className="p-4 border-t border-gray-300">
-          <button className="flex items-center space-x-3 px-4 py-2 w-full text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition">
+          <Link to="/login" className="flex items-center space-x-3 px-4 py-2 w-full text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition">
             <LogOut className="w-5 h-5" />
-            <span>Log out</span>
-          </button>
+            <span>Sign out</span>
+          </Link>
         </div>
       </aside>
     </>
