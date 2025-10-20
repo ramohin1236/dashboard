@@ -88,18 +88,28 @@ const NewRefund = ({ refunds, searchTerm, currentPage, setCurrentPage }) => {
                       {refund.accountNumber}
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                      <select
-                        value={refund.status}
-                        onChange={(e) => handleStatusChange(refund.id, e.target.value)}
-                        className={`text-xs font-medium rounded-full px-3 py-1 border-0 focus:ring-2 focus:ring-offset-2 ${
-                          refund.status === 'pending'
-                            ? 'bg-yellow-100 text-yellow-800 focus:ring-yellow-500'
-                            : 'bg-green-100 text-green-800 focus:ring-green-500'
-                        }`}
-                      >
-                        <option value="pending">Pending</option>
-                        <option value="refunded">Refunded</option>
-                      </select>
+                     <select
+                          className="py-2 px-4 rounded-full font-semibold cursor-pointer 
+                          bg-yellow-100 text-yellow-600
+                               peer"
+                          onChange={(e) => {
+                            const select = e.target;
+                            if (select.value === "Paid") {
+                              select.className =
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-[#e0f2fe] text-[#28afeb]";
+                            } else {
+                              select.className =
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-yellow-100 text-yellow-600";
+                            }
+                          }}
+                        >
+                          <option value="Pending" className="text-yellow-600">
+                            Pending
+                          </option>
+                          <option value="Paid" className="text-green-600">
+                            Refunded
+                          </option>
+                        </select>
                     </td>
                  
                   </tr>

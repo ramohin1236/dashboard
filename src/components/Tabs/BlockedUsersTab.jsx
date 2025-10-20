@@ -99,7 +99,7 @@ const BlockedUsersTab = ({ blockedUsers, searchTerm, currentPage, setCurrentPage
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center space-x-2">
                         <button 
-                          className="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-md flex items-center justify-center transition-colors"
+                          className="w-8 h-8 bg-[#115e59] hover:bg-teal-700 text-white rounded-md flex items-center justify-center transition-colors"
                           title="Unblock User"
                         >
                           <Unlock className="w-4 h-4" />

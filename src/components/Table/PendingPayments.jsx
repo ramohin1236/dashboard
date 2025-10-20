@@ -37,7 +37,7 @@ const PendingPayments = ({
                   >
                     Email
                   </th>
-                   <th
+                  <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "100px" }}
                   >
@@ -55,7 +55,7 @@ const PendingPayments = ({
                   >
                     Bank Name
                   </th>
-                  
+
                   <th
                     className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     style={{ minWidth: "120px" }}
@@ -68,7 +68,6 @@ const PendingPayments = ({
                   >
                     Status
                   </th>
-                 
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -96,10 +95,10 @@ const PendingPayments = ({
                         </div>
                       </div>
                     </td>
-                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {user.email}
                     </td>
-                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {user.amount}
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -108,19 +107,36 @@ const PendingPayments = ({
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {user.bank_name}
                     </td>
-                   
+
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {user.complete_date}
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100">
-                        <select className="py-1 px-2 text-red-400">
-                             <option value="Pending">Pending</option>
-                             <option value="Paid">Paid</option>
+                      <span className="inline-flex items-center px-4 py-3 rounded-full text-xs font-medium">
+                        <select
+                          className="py-2 px-4 rounded-full font-semibold cursor-pointer 
+                          bg-yellow-100 text-yellow-600
+                               peer"
+                          onChange={(e) => {
+                            const select = e.target;
+                            if (select.value === "Paid") {
+                              select.className =
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-[#e0f2fe] text-[#28afeb]";
+                            } else {
+                              select.className =
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-yellow-100 text-yellow-600";
+                            }
+                          }}
+                        >
+                          <option value="Pending" className="text-yellow-600">
+                            Pending
+                          </option>
+                          <option value="Paid" className="text-green-600">
+                            Paid
+                          </option>
                         </select>
                       </span>
                     </td>
-                    
                   </tr>
                 ))}
               </tbody>
