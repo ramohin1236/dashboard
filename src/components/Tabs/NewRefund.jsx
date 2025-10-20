@@ -89,17 +89,17 @@ const NewRefund = ({ refunds, searchTerm, currentPage, setCurrentPage }) => {
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                      <select
-                          className="py-2 px-4 rounded-full font-semibold cursor-pointer 
+                          className="py-1 px-4 rounded-full font-semibold cursor-pointer 
                           bg-yellow-100 text-yellow-600
                                peer"
                           onChange={(e) => {
                             const select = e.target;
                             if (select.value === "Paid") {
                               select.className =
-                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-[#e0f2fe] text-[#28afeb]";
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-[#e0f2fe] text-[#28afeb] text-sm";
                             } else {
                               select.className =
-                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-yellow-100 text-yellow-600";
+                                "py-2 px-4 rounded-full font-semibold cursor-pointer bg-yellow-100 text-yellow-600 text-sm";
                             }
                           }}
                         >

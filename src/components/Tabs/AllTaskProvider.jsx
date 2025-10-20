@@ -1,11 +1,17 @@
-import {Eye, MoreVertical } from 'lucide-react';
-import { Link } from 'react-router';
+import { Eye, MoreVertical } from "lucide-react";
+import { MdOutlineBlock } from "react-icons/md";
+import { Link } from "react-router";
 
-const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => {
-
-    const filteredUsers = users.filter(user => 
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchTerm.toLowerCase())
+const AllTaskProvider = ({
+  users,
+  searchTerm,
+  currentPage,
+  setCurrentPage,
+}) => {
+  const filteredUsers = users.filter(
+    (user) =>
+      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredUsers.length / 10);
@@ -13,37 +19,58 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
   const paginatedUsers = filteredUsers.slice(startIndex, startIndex + 10);
 
   return (
-     <>
+    <>
       {/* Table */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="overflow-x-auto">
-          <div style={{ minWidth: '800px' }}>
+          <div style={{ minWidth: "800px" }}>
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '200px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "200px" }}
+                  >
                     User Name
                   </th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '140px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "140px" }}
+                  >
                     Mobile Number
                   </th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '200px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "200px" }}
+                  >
                     Email
                   </th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '120px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "120px" }}
+                  >
                     Joined
                   </th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '120px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "120px" }}
+                  >
                     Active tasks
                   </th>
-                  <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ minWidth: '100px' }}>
+                  <th
+                    className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    style={{ minWidth: "100px" }}
+                  >
                     Action
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {paginatedUsers.map((user) => (
-                  <tr key={user.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={user.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="relative">
@@ -57,7 +84,9 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
                           )}
                         </div>
                         <div className="ml-3">
-                          <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                          <div className="text-sm font-medium text-gray-900">
+                            {user.name}
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -77,17 +106,20 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
                     </td>
                     <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center space-x-2">
-                        <button 
+                        <button
                           className="w-8 h-8 bg-[#115E59] hover:bg-teal-700 text-white rounded-md flex items-center justify-center transition-colors"
                           title="View Details"
                         >
-                         <Link to='/taskproviders-details'> <Eye className="w-4 h-4" /></Link>
+                          <Link to="/taskproviders-details">
+                            {" "}
+                            <Eye className="w-4 h-4" />
+                          </Link>
                         </button>
-                        <button 
-                          className="w-8 h-8 bg-[#115E59] hover:bg-teal-700 text-white rounded-md flex items-center justify-center transition-colors"
+                        <button
+                          className="w-8 h-8 bg-red-100 hover:bg-red-200 text-white rounded-md flex items-center justify-center transition-colors cursor-pointer"
                           title="More Options"
                         >
-                          <MoreVertical className="w-4 h-4" />
+                          <MdOutlineBlock className="w-4 h-4 text-red-600" />
                         </button>
                       </div>
                     </td>
@@ -97,17 +129,16 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
             </table>
           </div>
         </div>
-        
-        
       </div>
 
       {/* Pagination */}
       <div className="flex items-center justify-between mt-6">
         <div className="text-sm text-gray-500">
-          Showing {Math.min(startIndex + 1, filteredUsers.length)} to{' '}
-          {Math.min(startIndex + 10, filteredUsers.length)} of {filteredUsers.length} results
+          Showing {Math.min(startIndex + 1, filteredUsers.length)} to{" "}
+          {Math.min(startIndex + 10, filteredUsers.length)} of{" "}
+          {filteredUsers.length} results
         </div>
-        
+
         <div className="flex items-center space-x-1">
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
@@ -116,7 +147,7 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
           >
             «
           </button>
-          
+
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
@@ -125,19 +156,21 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
             ‹
           </button>
 
-          {Array.from({ length: Math.min(3, totalPages) }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                currentPage === page
-                  ? 'bg-[#115E59] text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {page}
-            </button>
-          ))}
+          {Array.from({ length: Math.min(3, totalPages) }, (_, i) => i + 1).map(
+            (page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                  currentPage === page
+                    ? "bg-[#115E59] text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {page}
+              </button>
+            )
+          )}
 
           {totalPages > 3 && (
             <>
@@ -146,8 +179,8 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
                 onClick={() => setCurrentPage(totalPages)}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   currentPage === totalPages
-                    ? 'bg-[#115E59] text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? "bg-[#115E59] text-white"
+                    : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 {totalPages}
@@ -156,15 +189,19 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
           )}
 
           <button
-            onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+            onClick={() =>
+              setCurrentPage(Math.min(totalPages, currentPage + 1))
+            }
             disabled={currentPage === totalPages}
             className="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             ›
           </button>
-          
+
           <button
-            onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+            onClick={() =>
+              setCurrentPage(Math.min(totalPages, currentPage + 1))
+            }
             disabled={currentPage === totalPages}
             className="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
@@ -173,7 +210,7 @@ const AllTaskProvider = ({ users, searchTerm, currentPage, setCurrentPage }) => 
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AllTaskProvider
+export default AllTaskProvider;

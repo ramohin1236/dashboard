@@ -1,5 +1,6 @@
 
 import {Eye, MoreVertical } from 'lucide-react';
+import { MdOutlineBlock } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const AllUsersTab = ({ users, searchTerm, currentPage, setCurrentPage }) => {
@@ -84,10 +85,10 @@ const AllUsersTab = ({ users, searchTerm, currentPage, setCurrentPage }) => {
                          <Link to='/block-user'> <Eye className="w-4 h-4" /></Link>
                         </button>
                         <button 
-                          className="w-8 h-8 bg-[#115E59] hover:bg-teal-700 text-white rounded-md flex items-center justify-center transition-colors"
+                          className="w-8 h-8 bg-red-100 hover:bg-red-200 text-white rounded-md flex items-center justify-center transition-colors cursor-pointer"
                           title="More Options"
                         >
-                          <MoreVertical className="w-4 h-4" />
+                          <MdOutlineBlock className="w-4 h-4 text-red-600" />
                         </button>
                       </div>
                     </td>
@@ -98,7 +99,7 @@ const AllUsersTab = ({ users, searchTerm, currentPage, setCurrentPage }) => {
           </div>
         </div>
         
-        
+     
       </div>
 
       {/* Pagination */}
