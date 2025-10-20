@@ -152,7 +152,7 @@ const Topbar = () => {
             />
             <div className="hidden sm:block text-left">
               <p className="text-sm font-medium text-gray-900">Jane Cooper</p>
-              <p className="text-xs  bg-green-100 text-green-700 px-2 py-0.5 rounded-full inline-block">
+              <p className="text-xs  bg-[#e6f4f1] text-[#115e59]  px-2 py-1 font-bold rounded-md inline-block">
                 Admin
               </p>
             </div>
@@ -196,12 +196,14 @@ const Topbar = () => {
 
               {/* Sign Out */}
               <div className="border-t border-gray-200 py-2">
-                <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-red-50 transition-colors text-left">
+                <Link
+                to="/login"
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-red-50 transition-colors text-left">
                   <LogOut className="w-4 h-4 text-red-500" />
                   <span className="text-sm text-red-600 font-medium">
                     Sign Out
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           )}

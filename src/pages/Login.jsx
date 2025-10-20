@@ -1,17 +1,19 @@
 import React from "react";
+import task_alley from "/task_alley_logo.svg"
+import { Link } from "react-router";
 
 const Login = () => {
   return (
     <div className="">
       <div className="min-h-screen  flex flex-col items-center justify-center py-6 px-4">
         <div className="lg:min-w-sm ">
-          <a href="javascript:void(0)">
+          <Link to="/">
             <img
-              src="https://readymadeui.com/readymadeui.svg"
+              src={task_alley}
               alt="logo"
               className="w-40 mb-8 mx-auto block"
             />
-          </a>
+          </Link>
 
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <h1 className="text-slate-900 text-center text-3xl font-semibold">
@@ -109,7 +111,6 @@ const Login = () => {
                   Sign in
                 </button>
               </div>
-           
             </form>
           </div>
         </div>
