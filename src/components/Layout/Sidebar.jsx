@@ -18,13 +18,14 @@ import {
   LogOut,
 } from "lucide-react";
 import { NavLink } from "react-router";
+import { TbCategoryPlus } from "react-icons/tb";
 
 const navItems = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
   { name: "Users", path: "/users", icon: Users },
   { name: "Task Providers", path: "/task-providers", icon: ClipboardList },
   { name: "Active Tasks", path: "/active-tasks", icon: Layers },
-  { name: "Service Category", path: "/service-category", icon: Layers },
+  { name: "Service Category", path: "/service-category", icon: TbCategoryPlus },
   { name: "Manage Referrals", path: "/manage-referrals", icon: Share2 },
   { name: "Manage Promo", path: "/manage-promo", icon: Tag },
   { name: "Manage Payments", path: "/manage-payments", icon: CreditCard },
