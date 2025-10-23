@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, Upload, Check, ArrowLeft, Download, Search } from "lucide-react";
 import AllService from "../components/Tabs/AllService";
 import { Link } from "react-router";
+import { TbCategoryPlus } from "react-icons/tb";
 
 const ServiceCategory = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -197,9 +198,9 @@ const ServiceCategory = () => {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
             <Link
-            to="/active-tasks"
+            
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <TbCategoryPlus className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
               Service Category Management

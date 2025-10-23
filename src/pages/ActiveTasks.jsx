@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Download, Layers } from "lucide-react";
 import { Link } from "react-router";
 
 const ActiveTasks = () => {
@@ -366,8 +366,8 @@ const ActiveTasks = () => {
     <div className="p-4">
       <div className="flex items-center justify-between space-x-3 mb-10">
             <div className="flex text-center">
-               <Link to="/task-providers" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+               <Link className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <Layers className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Active Tasks</h1>
             </div>

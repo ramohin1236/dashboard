@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Search, Download } from 'lucide-react';
+import { ArrowLeft, Search, Download, ClipboardList } from 'lucide-react';
 import AllTaskProvider from '../components/Tabs/AllTaskProvider';
 import BlockTaskProviders from '../components/Tabs/BlockTaskProviders';
 import { Link } from 'react-router';
@@ -183,7 +183,7 @@ const TaskProviders = () => {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
             <Link to="/users" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <ClipboardList className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Task Providers</h1>
           </div>

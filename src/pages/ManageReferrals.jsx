@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, Search } from "lucide-react";
+import { ArrowLeft, Download, Search, Share2 } from "lucide-react";
 import { useState } from "react";
 import AllRefund from "../components/Tabs/AllRefund";
 import ReferralValue from "../components/Cards/ReferralValue";
@@ -62,8 +62,8 @@ const ManageReferrals = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row  md:items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <Link to="/service-category" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <Link className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <Share2 className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
               Referrals Management

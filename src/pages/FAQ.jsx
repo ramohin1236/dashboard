@@ -1,4 +1,6 @@
+import { HelpCircle } from 'lucide-react';
 import React, { useState } from 'react'
+import { Link } from 'react-router';
 
 const FAQ = () => {
    const [faqs, setFaqs] = useState([
@@ -141,7 +143,17 @@ const FAQ = () => {
       <div className="">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">FAQ</h1>
+            <div className="flex items-center space-x-3 ">
+        <Link
+          
+          className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+        >
+          <HelpCircle className="w-5 h-5 text-gray-600" />
+        </Link>
+        <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
+          FAQ
+        </h1>
+      </div>
           <button
             onClick={() => setShowAddModal(true)}
             className="bg-[#115E59] text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors duration-200 font-medium cursor-pointer"

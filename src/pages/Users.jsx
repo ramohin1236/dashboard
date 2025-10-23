@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { ArrowLeft, Search, Download } from 'lucide-react';
+import {  Search, Download, User } from 'lucide-react';
 import AllUsersTab from '../components/Tabs/AllUsersTab';
 import BlockedUsersTab from '../components/Tabs/BlockedUsersTab';
 import { Link } from 'react-router';
+
 
 
 
@@ -185,8 +186,8 @@ const Users = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <Link to='/' className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <Link  className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <User className="w-5 h-5 text-gray-600" />
             </Link>
             <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">User Management</h1>
           </div>
