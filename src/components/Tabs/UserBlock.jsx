@@ -151,28 +151,91 @@ export default function UserBlock() {
               </div>
             </div>
           ) : (
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <label className="block text-gray-700 font-semibold text-sm tracking-wide">
-                  Identification Document Type
-                </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    value="National Identification Number (NIN)"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-800 bg-gray-50 focus:bg-white focus:border-teal-500 focus:outline-none transition-all duration-200 font-medium"
-                    readOnly
-                  />
-                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                    <span className="text-xs font-semibold text-[#115E59] bg-green-100 px-2 py-1 rounded-full">
-                      VALID
-                    </span>
+             <div className="space-y-6">
+              <div className="space-y-2 flex flex-col gap-6">
+                <div className="flex w-full gap-7">
+                  <div className="w-full">
+                    <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+                      Bank Verification Number (BVN)
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        value="Bank Verification Number (BVN)"
+                        className="w-full border-2 border-gray-200 rounded-sm p-4 text-gray-400 bg-gray-50 focus:bg-white focus:border-teal-500 focus:outline-none transition-all duration-200 font-medium "
+                        readOnly
+                      />
+                      <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        {/* <span className="text-xs font-semibold text-[#115E59] bg-green-100 px-2 py-1 rounded-full">
+                          VALID
+                        </span> */}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full">
+                    <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+                      Identification Document Type
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        value="National Identification Number (NIN)"
+                        className="w-full border-2 border-gray-200 rounded-sm p-4 text-gray-400 bg-gray-50 focus:bg-white focus:border-teal-500 focus:outline-none transition-all duration-200 font-medium"
+                        readOnly
+                      />
+                      <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        {/* <span className="text-xs font-semibold text-[#115E59] bg-green-100 px-2 py-1 rounded-full">
+                          VALID
+                        </span> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex w-full gap-7">
+                  <div className="w-full">
+                    <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+                     Identification Number
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        value="Identification Number"
+                        className="w-full border-2 border-gray-200 rounded-sm p-4 text-gray-400 bg-gray-50 focus:bg-white focus:border-teal-500 focus:outline-none transition-all duration-200 font-medium "
+                        readOnly
+                      />
+                      <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        {/* <span className="text-xs font-semibold text-[#115E59] bg-green-100 px-2 py-1 rounded-full">
+                          VALID
+                        </span> */}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full">
+                    <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+                      Location
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        value="Location"
+                        className="w-full border-2 border-gray-200 rounded-sm p-4 text-gray-400 bg-gray-50 focus:bg-white focus:border-teal-500 focus:outline-none transition-all duration-200 font-medium"
+                        readOnly
+                      />
+                      <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        {/* <span className="text-xs font-semibold text-[#115E59] bg-green-100 px-2 py-1 rounded-full">
+                          VALID
+                        </span> */}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+              <div className="space-y-2 flex gap-8 w-full">
+               <div className="w-full">
+                     <label className="block text-gray-700 font-semibold text-sm tracking-wide">
                   Identity Verification Document
                 </label>
                 <div className="border-2 border-gray-200 rounded-xl p-6 bg-gray-50">
@@ -195,6 +258,32 @@ export default function UserBlock() {
                     </div>
                   </div>
                 </div>
+               </div>
+               <div className="w-full">
+                     <label className="block text-gray-700 font-semibold text-sm tracking-wide">
+                  Location verify Document
+                </label>
+                <div className="border-2 border-gray-200 rounded-xl p-6 bg-gray-50">
+                  <div className="flex flex-col items-center space-y-3">
+                    <img
+                      src="/paper info.webp"
+                      alt="document"
+                      className="w-48 h-32 object-cover rounded-lg shadow-md border-2 border-white"
+                    />
+                    <div className="text-center">
+                      <p className="text-sm font-medium text-gray-700">
+                        Location Document
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Uploaded on Jan 10, 2025
+                      </p>
+                      <span className="inline-block mt-2 text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                        VERIFIED
+                      </span>
+                    </div>
+                  </div>
+                </div>
+               </div>
               </div>
             </div>
           )}
