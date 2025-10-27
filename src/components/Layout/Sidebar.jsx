@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Link, NavLink } from "react-router";
 import { TbCategoryPlus } from "react-icons/tb";
+import { FaNairaSign } from "react-icons/fa6";
 
 const navItems = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
@@ -31,7 +32,7 @@ const navItems = [
   { name: "Manage Payments", path: "/manage-payments", icon: CreditCard },
   { name: "Manage Refund", path: "/manage-refund", icon: RotateCcw },
   { name: "Manage Dispute", path: "/manage-dispute", icon: AlertTriangle },
-  { name: "Earnings", path: "/earnings", icon: DollarSign },
+  { name: "Earnings", path: "/earnings", icon: FaNairaSign },
   { name: "Profile Setting", path: "/profile-setting", icon: Settings },
   { name: "FAQ", path: "/faq", icon: HelpCircle },
   { name: "Privacy Policy", path: "/privacy-policy", icon: Shield },

@@ -1,8 +1,8 @@
 import LastEarnHistory from "../components/Charts/LastEarnHistory";
-import EarningHistory from "../components/Charts/EarningHistory";
 import { Link } from "react-router";
-import { ArrowLeft, DollarSign, Download } from "lucide-react";
+import {  Download } from "lucide-react";
 import TaskProviderGrowth from "../components/Charts/TaskProviderGrowth";
+import { FaNairaSign } from "react-icons/fa6";
 
 const Earnings = () => {
   return (
@@ -13,7 +13,7 @@ const Earnings = () => {
             to="/manage-dispute"
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
-            <DollarSign className="w-5 h-5 text-gray-600" />
+            <FaNairaSign className="w-5 h-5 text-gray-600" />
           </Link>
           <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
             Earning
@@ -32,8 +32,8 @@ const Earnings = () => {
             <img src="/bg_image.png" className="w-72" alt="" />
           </div>
           <div className="flex flex-col gap-2">
-            <img src="/money.png" className="w-16" alt="" />
-            <p>Total Earnings</p>
+            <img src="/naira.png" className="w-16" alt="" />
+            <p className="text-xl font-bold py-4">Total Earnings</p>
             <p className="text-4xl font-bold text-[#115E59]">₦23,0900</p>
           </div>
         </div>
